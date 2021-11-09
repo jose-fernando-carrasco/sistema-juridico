@@ -35,7 +35,7 @@ Route::get('Casos/search1',[CasoController::class,'search1'])->name('caso.search
 Route::get('Casos/solicitudes',[CasoController::class,'solicitudes_index'])->middleware('can:caso.solicitudes_index')->name('caso.solicitudes_index');
 Route::get('Casos/solicitudes/Analizar/{id}',[CasoController::class,'analizar'])->name('caso.analizar');
 Route::put('Casos/solicitudes/Analizar/{caso}',[CasoController::class,'aprobar'])->name('caso.aprobar');
-Route::get('Casos//buscar/solicitar/{id}',[CasoController::class,'solicitar'])->middleware('can:caso.buscar')->name('caso.solicitar');//doy el mismo permiso de abogado ya que vienen ligados->middleware('can:caso.buscar')
+Route::get('Casos/buscar/solicitar/{id}',[CasoController::class,'solicitar'])->middleware('can:caso.buscar')->name('caso.solicitar');//doy el mismo permiso de abogado ya que vienen ligados->middleware('can:caso.buscar')
 Route::put('Casos/buscar/solicitar',[CasoController::class,'solicitar_caso'])->name('caso.solicitar_caso');
 Route::get('Casos/invitaciones/index',[CasoController::class,'invitaciones_index'])->middleware('can:caso.invitaciones.index')->name('caso.invitaciones.index');
 Route::get('Casos/invitaciones/index/show/{id}',[CasoController::class,'invitacion_show'])->name('caso.invitaciones.show');

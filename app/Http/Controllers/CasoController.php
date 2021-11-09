@@ -242,7 +242,7 @@ class CasoController extends Controller
         return redirect()->route('caso.solicitudes_index');
     }
 
-    public function solicitar($id){
+    public function solicitar($id){ ///aquiiiii solicitar unirse al abogado
 
         $caso = Caso::select('casos.*','states.name')
         ->join('states','casos.state_id','=','states.id')
@@ -257,15 +257,18 @@ class CasoController extends Controller
             'profesionB'=>'required',
             'domicilioB'=>'required',
             'ciB'=>'required',
-        ]);  // Me quedé aquí XDXDXDXDXDXD
+        ]);  
 
         $caso = Caso::where('code','=',$request->code)->first();
        
+        $abogB = Lawyer::select('lawyers.id')
+             ->join('users','lawyers.user_id','=','users.id')
+             ->where('lawyers.user_id','=',auth()->user()->id)->first();  
+
         $caso->profesionB = $request->profesionB;
         $caso->domicilioB = $request->domicilioB;
         $caso->ciB = $request->ciB;
-        $caso->lawyerA_id = 2;
-        $caso->lawyerB_id = null;// el usuario Abogado logueado que esta en el sistema
+        $caso->lawyerB_id = $abogB->id;  // el usuario Abogado logueado que esta en el sistema
         $caso->update();
         return redirect()->route('caso.buscar');
     }

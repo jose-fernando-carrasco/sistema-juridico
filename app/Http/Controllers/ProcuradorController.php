@@ -28,7 +28,7 @@ class ProcuradorController extends Controller
              $procuradores = Attorney::select('attorneys.id','users.name')
                   ->join('users','attorneys.user_id','=','users.id')
                   ->get();
-        }else{
+        }else{   //mallll
 
              $idabog = Lawyer::select('lawyers.id')
                  ->join('users','lawyers.user_id','=','users.id')
@@ -38,6 +38,7 @@ class ProcuradorController extends Controller
                  ->join('attorneys','invitations.attorney_id','=','attorneys.id')
                  ->leftjoin('users','attorneys.user_id','=','users.id')
                  ->where('invitations.lawyer_id','=',$idabog->id)
+                 ->distinct()
                  ->get();
         }
             
