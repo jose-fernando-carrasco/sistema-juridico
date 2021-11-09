@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\Activitylog\LogOptions;
+/* use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions; */
 
 class Caso extends Model
 {
     use HasFactory;
-    use LogsActivity;
+    //use LogsActivity;
 
 
-    public function getActivitylogOptions(): LogOptions
+    /* public function getActivitylogOptions(): LogOptions
     {
                 
         return LogOptions::defaults()
@@ -21,7 +21,7 @@ class Caso extends Model
         ->useLogName('Registro')
         ->logOnly(['id', 'code','title', 'created_at']);
         // Chain fluent methods for configuration options
-    }
+    } */
 
     /* protected $fillable = ['code','title','nameA','profesionA','domicilioA','ciA','nameB','Descripcion'];  */  // permite la asignacion masiva 
     protected $guarded = ['token'];
