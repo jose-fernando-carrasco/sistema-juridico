@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
         $user2->email = "pepe@correo.com";
         $user2->password = bcrypt('32823232');
         $user2->save();
-        $user2->syncRoles(['abogado']);
+        $user2->syncRoles(['Abogado']);
 
         /* 3 */
         $user3 = new User(); 
@@ -39,7 +39,7 @@ class UserSeeder extends Seeder
         $user3->email = "pablo@correo.com";
         $user3->password = bcrypt('31223232');
         $user3->save();
-        $user3->syncRoles(['juez']);
+        $user3->syncRoles(['Juez']);
 
         /* 4 */
         $user4 = new User();
@@ -48,7 +48,7 @@ class UserSeeder extends Seeder
         $user4->email = "fernanda@correo.com";
         $user4->password = bcrypt('54223232');
         $user4->save();
-        $user4->syncRoles(['abogado']);
+        $user4->syncRoles(['Abogado']);
 
         /* 5 */
         $user5 = new User();  
@@ -57,7 +57,7 @@ class UserSeeder extends Seeder
         $user5->email = "carla@correo.com";
         $user5->password = bcrypt('99223232');
         $user5->save();
-        $user5->syncRoles(['juez']);
+        $user5->syncRoles(['Juez']);
 
         /* 6 */
         $user6 = new User();
@@ -66,7 +66,7 @@ class UserSeeder extends Seeder
         $user6->email = "eli@correo.com";
         $user6->password = bcrypt('31223289');
         $user6->save();
-        $user6->syncRoles(['abogado']);
+        $user6->syncRoles(['Abogado']);
 
         /* 7 */
         $user7 = new User();
@@ -75,7 +75,7 @@ class UserSeeder extends Seeder
         $user7->email = "brayan@correo.com";
         $user7->password = bcrypt('31267232');
         $user7->save();
-        $user7->syncRoles(['procurador']);
+        $user7->syncRoles(['Procurador']);
 
         /* 8 */
         $user8 = new User();
@@ -84,7 +84,7 @@ class UserSeeder extends Seeder
         $user8->email = "joaquin@correo.com";
         $user8->password = bcrypt('11223882');
         $user8->save();
-        $user8->syncRoles(['procurador']);
+        $user8->syncRoles(['Procurador']);
 
         /* 9 */
         $user9 = new User();
@@ -93,7 +93,7 @@ class UserSeeder extends Seeder
         $user9->email = "hugo@correo.com";
         $user9->password = bcrypt('31553252');
         $user9->save();
-        $user9->syncRoles(['procurador']);
+        $user9->syncRoles(['Procurador']);
 
         /* 10 */
         $user10 = new User(); //JUEZ
@@ -102,6 +102,6 @@ class UserSeeder extends Seeder
         $user10->email = "juma@correo.com";
         $user10->password = bcrypt('22113355');
         $user10->save();
-        $user10->syncRoles(['juez']);
+        $user10->syncRoles(['Juez']);
     }
 }
