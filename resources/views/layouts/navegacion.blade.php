@@ -409,11 +409,17 @@
 
             <div id="main-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
+
+                    @can('bitacora.index')
+                          <li><a href="{{route('bitacora.index')}}" class="nav-item nav-link active">Bitacora</a></li>
+                    @endcan
+                    
                     
                     @can('admin.users.index')
                          <li><a href="{{route('admin.users.index')}}" class="nav-item nav-link active">Usuarios</a></li>
                     @endcan
                     
+
                     @can('procuradores.index')
                          <li class="dropdown">
                              <a href="#" class="nav-item nav-link" data-toggle="dropdown">Procuradores</a>

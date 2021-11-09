@@ -1,3 +1,3 @@
 <?php
 
-$mysqli = new mysqli("localhost","root", "", "archivos");
+//$mysqli = new mysqli("localhost","root", "", "archivos");

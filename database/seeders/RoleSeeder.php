@@ -47,7 +47,7 @@ class RoleSeeder extends Seeder
         /*Permisos Acerca de los Expedientes*/
         
         Permission::create(['name'=>'expediente.archivadosindex'])->syncRoles([$admin]);
-        
+        Permission::create(['name'=>'bitacora.index'])->syncRoles([$admin]);
 
     }
 }

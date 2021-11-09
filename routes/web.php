@@ -4,6 +4,7 @@ use App\Http\Controllers\CasoController;
 use App\Http\Controllers\ExpedienteController;
 use App\Http\Controllers\ProcuradorController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Bitacoracontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -59,3 +60,5 @@ Route::post('Procuradores/Invitar/store/{id}',[ProcuradorController::class,'stor
 /* Usuarios*/
 
 Route::resource('users', UserController::class)->names('admin.users');
+
+Route::get('Bitacora',[Bitacoracontroller::class,'index'])->middleware('can:bitacora.index')->name('bitacora.index');
