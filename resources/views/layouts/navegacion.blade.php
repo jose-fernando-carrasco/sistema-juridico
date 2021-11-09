@@ -410,9 +410,9 @@
             <div id="main-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
 
-                    @can('bitacora.index')
+                    {{-- @can('bitacora.index')
                           <li><a href="{{route('bitacora.index')}}" class="nav-item nav-link active">Bitacora</a></li>
-                    @endcan
+                    @endcan --}}
                     
                     
                     @can('admin.users.index')
