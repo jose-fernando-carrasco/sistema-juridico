@@ -304,9 +304,36 @@ class CasoController extends Controller
     }
 
     public function invitacion_update(Invitation $invitation,Request $request){
-       
+    
        $invitation->status = true;
        $invitation->update();
+       //return  $request->nameA;  
+       $caso = Invitation::select('casos.*')
+            ->join('casos','invitations.caso_id','=','casos.id')
+            ->where('casos.id','=',$invitation->caso_id)->first(); 
+        
+        $abog = Invitation::select('lawyers.id')
+            ->join('lawyers','invitations.lawyer_id','=','lawyers.id')
+            ->leftjoin('users','lawyers.user_id','=','users.id')
+            ->where('users.name','=',$request->nameA)->first();  
+
+        $proc = Invitation::select('attorneys.id')
+            ->join('attorneys','invitations.attorney_id','=','attorneys.id')
+            ->leftjoin('users','attorneys.user_id','=','users.id')
+            ->where('users.name','=',$request->nam)->first();     
+
+        //return $abog;
+        $caso1 = Caso::find($caso->id);
+         if($caso1->lawyerA_id == $abog->id){
+            $caso1->attorneyA_id = $proc->id;
+            $caso1->update();
+         }else{
+             if ($caso1->lawyerB_id == $abog->id){
+                $caso1->attorneyB_id = $proc->id;
+                $caso1->update();
+             }
+         }      
+
        return redirect()->route('caso.invitaciones.index');
     }
 

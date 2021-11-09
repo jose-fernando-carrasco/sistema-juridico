@@ -55,29 +55,30 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($expedientes as $expediente)
-                    <tr>
-                        <td>{{ $expediente->id }}</td>
-                        <td>{{ $expediente->title }}</td>
-                        <td>{{ $expediente->name }}</td>
-                        <td>{{ $expediente->created_at->diffForHumans() }}</td>
-                        <td>
-                            <div class="row">
-                                <div class="col-12 mb-2 col-md-4 col-lg-3">
-                                    <a href="{{ route('expediente.show', $expediente->id) }}"
-                                        class="btn btn-lg btn-success">Ver</a>
-                                </div>
-                                <div class="col-12 justify-content-start col-md-6 col-lg-1">
-                                    <form action="{{ route('expediente.update', $expediente->id) }}" method="POST">
-                                        @csrf
-                                        @method('put')
-                                        <button type="submit" class="btn btn-lg btn-danger">Archivar</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                @endforeach
+              
+                     @foreach ($expedientes as $expediente)
+                         <tr>
+                             <td>{{ $expediente->id }}</td>
+                             <td>{{ $expediente->title }}</td>
+                             <td>{{ $expediente->name }}</td>
+                             <td>{{ $expediente->created_at->diffForHumans() }}</td>
+                             <td>
+                                 <div class="row">
+                                     <div class="col-12 mb-2 col-md-4 col-lg-3">
+                                         <a href="{{ route('expediente.show', $expediente->id) }}"
+                                             class="btn btn-lg btn-success">Ver</a>
+                                     </div>
+                                     <div class="col-12 justify-content-start col-md-6 col-lg-1">
+                                         <form action="{{ route('expediente.update', $expediente->id) }}" method="POST">
+                                             @csrf
+                                             @method('put')
+                                             <button type="submit" class="btn btn-lg btn-danger">Archivar</button>
+                                         </form>
+                                     </div>
+                                 </div>
+                             </td>
+                         </tr>
+                     @endforeach
 
             </tbody>
             <tfoot>

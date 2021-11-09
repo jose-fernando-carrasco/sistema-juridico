@@ -22,7 +22,7 @@ class FileSeeder extends Seeder
         
         /* 1 */
         $file2 = new File();
-        $file2->title = "Expediente de Homicidio de Primer Grado";
+        $file2->title = "Expediente de Asesinato con Arma de Fuego";
         $file2->caso_id = 2;
         $file2->save();
 

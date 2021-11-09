@@ -65,7 +65,7 @@
 
                 <div class="form-group col-md-6">
                     <label class="text-primary" for="inputDemandado">Recibido Por:</label>
-                    <input name="" type="text" class="form-control mb-3" placeholder="Ingrese el nombre Completo"
+                    <input name="nam" type="text" class="form-control mb-3" placeholder="Ingrese el nombre Completo"
                         id="inputnameB" value="{{$procurador->name}}" readonly>
                 </div>
 
