@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
         $user2->syncRoles(['abogado']);
 
         /* 3 */
-        $user3 = new User();
+        $user3 = new User(); 
         $user3->name = "Juan Pablo Sanchez Chavez";
         //$user3->carnet = 4436733;
         $user3->email = "pablo@correo.com";
@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
         $user4->syncRoles(['abogado']);
 
         /* 5 */
-        $user5 = new User();
+        $user5 = new User();  
         $user5->name = "Carla Patricia Melgar Barrientos";
         //$user5->carnet = 8239999;
         $user5->email = "carla@correo.com";
@@ -96,7 +96,7 @@ class UserSeeder extends Seeder
         $user9->syncRoles(['procurador']);
 
         /* 10 */
-        $user10 = new User();
+        $user10 = new User(); //JUEZ
         $user10->name = "Juan Manuel Leon Pereira";
         //$user10->carnet = 1029384;
         $user10->email = "juma@correo.com";

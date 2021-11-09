@@ -94,7 +94,7 @@ class CasoSeeder extends Seeder
         $caso3->ciB = 6666666;
         $caso3->Descripcion = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem culpa facilis recusandae? Consequuntur labore harum aliquam autem voluptatum excepturi accusamus facere eius natus et. Corrupti quaerat aspernatur ducimus! Deserunt, minus.";
         //Llaves foranea Juez
-        $caso3->judge_id = 3;
+        $caso3->judge_id = null;
         //Llaves foranea estado
         $caso3->state_id = 1; // estado concluido
         //Llaves foranea Abogado Demandante
